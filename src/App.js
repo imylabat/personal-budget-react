@@ -1,11 +1,6 @@
 import React from 'react';
 import './App.css';
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Menu from './Menu/Menu';
 import Hero from './Hero/Hero';
@@ -17,23 +12,16 @@ import AboutPage from './AboutPage/AboutPage';
 function App() {
   return (
     <Router> 
-      <Menu/>
-      <Hero/>
+      <Menu />
+      <Hero />
       <div className="mainContainer">
         <Routes>
-           <Route path="/about">
-            <AboutPage/>
-           </Route>
-           <Route path="/login">
-            <LoginPage/>
-           </Route>
-           <Route path="/">
-            <HomePage/>
-           </Route>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
-      <HomePage/>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
